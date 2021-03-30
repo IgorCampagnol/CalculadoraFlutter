@@ -35,7 +35,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
         new IconButton(
           icon: new Icon(Icons.share),
           onPressed: () {
-            Share.share('Compartilhar');
+            Share.share(
+                'faça o download do codigo em " https://github.com/IgorCampagnol/CalculadoraFlutter "');
           },
         ),
       ],
