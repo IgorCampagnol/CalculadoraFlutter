@@ -71,7 +71,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
           textAlign: TextAlign.end,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 32,
+            fontSize: 22,
             fontFamily: 'Calculator',
           ),
         ),

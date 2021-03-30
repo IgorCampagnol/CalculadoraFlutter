@@ -15,7 +15,7 @@ class CalculatorController {
   bool _usedEqual;
   String result;
   String historydigit;
-
+  String historyfinal;
   CalculatorController() {
     _clear();
   }
@@ -25,6 +25,7 @@ class CalculatorController {
   void _clear() {
     historydigit = vazio;
     result = kZero;
+    historyfinal = vazio;
     _memories.setAll(kMemoryFirst, kMemoryClear);
     _currentMemoryIndex = kMemoryFirst;
     _operation = kOperationNull;
@@ -41,18 +42,6 @@ class CalculatorController {
     }
     _memories[_currentMemoryIndex] = double.parse(
       result.replaceAll(kPoint, '.'),
-    );
-  }
-
-  void _deleteDigit2() {
-    final length = historydigit.length;
-    if (length > 1) {
-      historydigit = historydigit.substring(0, length - 1);
-    } else {
-      historydigit = vazio;
-    }
-    _memories[_currentMemoryIndex] = double.parse(
-      historydigit.replaceAll(kPoint, '.'),
     );
   }
 
@@ -75,7 +64,10 @@ class CalculatorController {
     if (_currentMemoryIndex == kMemoryFirst) {
       _currentMemoryIndex++;
     } else if (!_usedEqual || (_usedEqual && operation == '=')) {
-      historydigit = '${_memories[0]} $_operation ${_memories[1]}';
+      if (historydigit.isEmpty)
+        historydigit = '${_memories[0]} $_operation ${_memories[1]}';
+      else
+        historydigit += ' $_operation ${_memories[1]}';
       _memories[kMemoryFirst] = _calculate();
     }
 
@@ -110,7 +102,6 @@ class CalculatorController {
       _clear();
     } else if (command == 'DEL') {
       _deleteDigit();
-      _deleteDigit2();
     } else if (kOperations.contains(command)) {
       _setOperation(command);
     } else {
