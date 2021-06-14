@@ -13,5 +13,6 @@ Projeto desenvolvido em Sala de aula de uma calculadora em Flutter.
 4- Adicionar um botão na AppBar para compartilhar o aplicativo ([IconButton](https://medium.com/@mirmahfuz/playing-with-flutter-appbar-a5362428d13d), [plugin share](https://pub.dev/packages/share))
 Criar um [Text](https://api.flutter.dev/flutter/widgets/Text-class.html) em cima do resultado para exibir todas as operações realizadas (10 + 30 + 20 x 10)
 
-Desafio pode ser encontrado em [Link](https://medium.com/flutter-comunidade-br/desenvolvimento-de-uma-calculadora-simples-com-flutter-56106baae51)
-aula ministrada pelo professor [Kleber](https://github.com/kleberandrade)
+Desafio pode ser encontrado em [Link](https://medium.com/flutter-comunidade-br/desenvolvimento-de-uma-calculadora-simples-com-flutter-56106baae51).
+
+Aula ministrada pelo professor [Kleber](https://github.com/kleberandrade).
